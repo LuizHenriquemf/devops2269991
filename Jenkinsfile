@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-    stage('Preparação do Ambiente') {
+
+    stages {
+
+        stage('Preparação do Ambiente') {
             steps {
                 script {
                     // Instalar o Node.js e o npm
@@ -12,7 +15,7 @@ pipeline {
             }
         }
 
-    stages {
+
         stage('Build') {
             steps {
                 sh 'npm install'
