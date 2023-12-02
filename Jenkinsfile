@@ -4,18 +4,7 @@ pipeline {
 
     stages {
 
-        stage('Preparação do Ambiente') {
-            steps {
-                script {
-                    // Instalar o Node.js e o npm
-                    tool 'NodeJS'
-                    echo 'node --version'
-                    echo 'npm --version'
-                }
-            }
-        }
-
-
+        
         stage('Build') {
             steps {
                 sh 'npm install'
