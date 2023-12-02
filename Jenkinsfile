@@ -1,6 +1,17 @@
 pipeline {
     agent any
 
+    stage('Preparação do Ambiente') {
+            steps {
+                script {
+                    // Instalar o Node.js e o npm
+                    tool 'NodeJS'
+                    echo 'node --version'
+                    echo 'npm --version'
+                }
+            }
+        }
+
     stages {
         stage('Build') {
             steps {
@@ -28,3 +39,8 @@ pipeline {
 
     }
 }
+
+
+
+
+
